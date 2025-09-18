@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-x 4s ease infinite;
+}
+
+
+/* 🔥 Burger burn animation (looping) */
+/* 🔥 Burger burn animation (looping) */
+.burning-burger {
+  display: inline-block;
+  position: relative;
+  animation: burnColor 8s infinite;
+  filter: brightness(1) contrast(1) saturate(1);
+}
+
+/* 🔥 Brighter flames with glowing effect */
+.burning-burger .flame {
+  position: absolute;
+  /* bottom: -10px; */
+  left: 50%;
+  /* width: 22px;
+  height: 50px; */
+ 
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: flameFlicker 0.4s infinite alternate, flameAppear 8s infinite;
+  filter: blur(1px) drop-shadow(0 0 12px rgba(255, 150, 50, 0.9));
+}
+
+.burning-burger .flame2 {
+  left: 40%;
+  width: 18px;
+  height: 40px;
+  animation-delay: 0.15s;
+}
+.burning-burger .flame3 {
+  left: 60%;
+  width: 20px;
+  height: 45px;
+  animation-delay: 0.3s;
+}
+
+/* 🔥 Burger color transition */
+@keyframes burnColor {
+  0% {
+    filter: brightness(1) contrast(1) saturate(1); /* fresh */
+  }
+  25% {
+    filter: brightness(0.9) contrast(1.1) saturate(0.8);
+  }
+  30% {
+    filter: brightness(0.8) contrast(1.2) saturate(0.6);
+  }
+  60% {
+    filter: brightness(0.5) contrast(1.3) saturate(0.3) hue-rotate(-20deg);
+  }
+  80% {
+    filter: brightness(0.3) contrast(1.5) saturate(0) grayscale(1); /* burnt */
+  }
+  100% {
+    filter: brightness(1) contrast(1) saturate(1); /* reset fresh */
+  }
+}
+
+/* 🔥 Flames flicker & glow */
+@keyframes flameFlicker {
+  from {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+    filter: blur(1px) drop-shadow(0 0 14px rgba(255, 180, 80, 1));
+  }
+  to {
+    transform: translateX(-50%) scaleY(1.3);
+    opacity: 0.85;
+    filter: blur(2px) drop-shadow(0 0 20px rgba(255, 120, 40, 1));
+  }
+}
+
+/* Flames only during burning phase */
+@keyframes flameAppear {
+  0%, 25% { opacity: 0; }
+  30%, 80% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,0 +1,10 @@
+"use client";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../components/ui/button";
+import { Menu, X } from "lucide-react"; // for mobile toggle
+export default function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    return (_jsxs("header", { className: "w-full mx-auto sticky top-0 z-50 bg-blue-900/20 backdrop-blur-md transition-colors duration-300", children: [_jsxs("div", { className: "max-w-7xl mx-auto flex justify-between items-center px-6 py-6", children: [_jsx(Link, { to: "/", className: "flex items-center gap-2", children: _jsx("span", { className: "text-2xl flex item-center font-extrabold text-blue-400 drop-shadow-md", children: "Burger Money" }) }), _jsxs("nav", { className: "hidden md:flex gap-4 ", children: [_jsx(Link, { to: "/donations", children: _jsx(Button, { className: "py-6 cursor-pointer bg-blue-500 text-white hover:bg-blue-600 transition shadow-md hover:shadow-blue-500/40", children: "Check Donations" }) }), _jsx(Link, { to: "/whitepaper", children: _jsx(Button, { className: "py-6 cursor-pointer bg-blue-500 text-white hover:bg-blue-600 transition shadow-md hover:shadow-blue-500/40", children: "Read Whitepaper" }) })] }), _jsx("button", { className: "md:hidden text-blue-400 focus:outline-none", onClick: () => setMenuOpen(!menuOpen), children: menuOpen ? _jsx(X, { size: 28 }) : _jsx(Menu, { size: 28 }) })] }), menuOpen && (_jsxs("div", { className: "md:hidden border-t border-gray-700 flex flex-col items-center gap-4 py-6", children: [_jsx(Link, { to: "/donations", className: "w-11/12", onClick: () => setMenuOpen(false), children: _jsx(Button, { className: "w-full cursor-pointer bg-blue-500 text-white py-6 hover:bg-blue-600 transition", children: "Check Donations" }) }), _jsx(Link, { to: "/whitepaper", className: "w-11/12", onClick: () => setMenuOpen(false), children: _jsx(Button, { className: "w-full cursor-pointer bg-blue-500 text-white py-6 hover:bg-blue-600 transition", children: "Read Whitepaper" }) })] }))] }));
+}
