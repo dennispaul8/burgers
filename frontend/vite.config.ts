@@ -9,16 +9,5 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-  },
-  server: {
-    proxy: {
-      "/api/burn": {
-        target: "http://localhost:4000",
-        changeOrigin: true,
-      },
-    },
-  },
-    build: {
-    outDir: "dist/client"
   }
 })

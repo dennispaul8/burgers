@@ -10,10 +10,7 @@ export default function Donations() {
 
   const [donationList, setDonationList] = useState<Donation[]>([]);
 
-  const API_URL =
-    import.meta.env.MODE === "development"
-      ? "/api/burn"
-      : "https://burger-money.onrender.com/api/burn";
+  const API_URL = "https://burger-money.onrender.com/api/burn";
 
   useEffect(() => {
     fetch("/data/donations.json")

@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/burncounter.tsx","./src/components/donationcard.tsx","./src/components/header.tsx","./src/components/ui/button.tsx","./src/components/ui/card.tsx","./src/lib/utils.ts","./src/pages/donations.tsx","./src/pages/home.tsx","./src/pages/whitepaper.tsx"],"errors":true,"version":"5.8.3"}
