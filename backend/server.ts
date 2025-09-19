@@ -20,9 +20,13 @@ interface EtherscanResponse {
 }
 
 // allow frontend requests
-app.use(cors({
-  origin: "http://localhost:5174",
-}));
+app.use(
+  cors({
+    origin: "https://burgers-weld.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 
 // parse JSON
