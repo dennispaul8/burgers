@@ -12,7 +12,9 @@ const BURN_ADDRESS = "0x000000000000000000000000000000000000dEaD";
 // allow frontend requests
 app.use(
   cors({
-    origin: "https://burgers-hgfc.onrender.com/api/burn",
+    origin: "https://burgers-weld.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 // parse JSON
