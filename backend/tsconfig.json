@@ -1,22 +1,14 @@
 {
-    "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-  
   "compilerOptions": {
-     "types": ["vite/client"],
     "target": "ES2020",
-    "module": "ESNext",      
+    "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "dist",
-    "esModuleInterop": true,
+    "rootDir": ".", 
     "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "include": ["src/server.ts"]
+  "include": ["**/*.ts"],
+  "exclude": ["dist"]
 }
