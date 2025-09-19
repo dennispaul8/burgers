@@ -10,7 +10,7 @@ export default function Donations() {
 
   const [donationList, setDonationList] = useState<Donation[]>([]);
 
-  const API_URL = "https://burger-money.onrender.com/api/burn";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetch("/data/donations.json")
